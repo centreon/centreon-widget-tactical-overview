@@ -40,7 +40,7 @@ $dataUNK = array();
 $dataPEND = array();
 $db = new CentreonDB("centstorage");
 
-// queryCRI
+// query for CRITICAL state
 $res = $db->query(
     "SELECT
         SUM(
@@ -99,7 +99,7 @@ while ($row = $res->fetch()) {
     $dataCRI[] = $row;
 }
 
-// queryWA
+// query for WARNING state
 $res = $db->query(
     "SELECT
         SUM(
@@ -158,7 +158,7 @@ while ($row = $res->fetch()) {
     $dataWA[] = $row;
 }
 
-// queryOK
+// query for OK state
 $res = $db->query(
     "SELECT
         SUM(
@@ -183,7 +183,7 @@ while ($row = $res->fetch()) {
     $dataOK[] = $row;
 }
 
-// queryPEND
+// query for PENDING state
 $res = $db->query(
     "SELECT
         SUM(
@@ -207,7 +207,7 @@ while ($row = $res->fetch()) {
     $dataPEND[] = $row;
 }
 
-// queryUNK
+// query for UNKNOWN state
 $res = $db->query(
     "SELECT
         SUM(
