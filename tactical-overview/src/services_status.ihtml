@@ -5,7 +5,7 @@
         <link href="../../Themes/Centreon-2/Color/blue_css.php" rel="stylesheet" text="text/css"/>
         {literal}
         <style type="text/css">
-          .ListTable {font-size:11px;border-color: #BFD0E2;}                                                                                                                               
+          .ListTable {font-size:11px;border-color: #BFD0E2;}
         </style>
         <style>
           @import url('../../Themes/Centreon-2/style.css');
@@ -25,7 +25,7 @@
                <tr class="line_ack">
                         <td class='ListColLeft'><span class="badge service_critical margin_right">{$dataCRI[0].ack}</span>Acknowledge</td>
                         <td class='ListColLeft'><span class="badge service_warning margin_right">{$dataWA[0].ack}</span>Acknowledge</td>
-			<td class='ListColLeft'><span class="badge service_unknown margin_right">{$dataUNK[0].ack}</span>Acknowledge</td> 
+			<td class='ListColLeft'><span class="badge service_unknown margin_right">{$dataUNK[0].ack}</span>Acknowledge</td>
                        	<td></td>
                         <td></td>
                 </tr>
