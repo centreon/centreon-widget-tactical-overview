@@ -40,7 +40,7 @@ $dataPEND = array();
 $dataList = array();
 $db = new CentreonDB("centstorage");
 
-// queryDO
+// query for DOWN status
 $res = $db->query(
     "SELECT
         SUM(
@@ -78,7 +78,7 @@ while ($row = $res->fetch()) {
     $dataDO[] = $row;
 }
 
-// queryUN
+// query for UNKNOWN status
 $res = $db->query(
     "SELECT
         SUM(
@@ -116,7 +116,7 @@ while ($row = $res->fetch()) {
     $dataUN[] = $row;
 }
 
-// queryUP
+// query for UP status
 $res = $db->query(
     "SELECT
         SUM(
@@ -139,7 +139,7 @@ while ($row = $res->fetch()) {
     $dataUP[] = $row;
 }
 
-// queryPEND
+// query for PENDING status
 $res = $db->query(
     "SELECT
         SUM(
