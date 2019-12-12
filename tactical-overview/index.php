@@ -64,8 +64,8 @@ try {
     $widgetObj = new CentreonWidget($centreon, $db_centreon);
     $preferences = $widgetObj->getWidgetPreferences($widgetId);
     $autoRefresh = 0;
-    if (isset($preferences['refresh_interval'])) {
-        $autoRefresh = $preferences['refresh_interval'];
+    if (isset($preferences['autoRefresh'])) {
+        $autoRefresh = $preferences['autoRefresh'];
     }
 } catch (Exception $e) {
     echo $e->getMessage() . "<br/>";
