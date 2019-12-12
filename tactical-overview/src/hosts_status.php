@@ -158,7 +158,6 @@ $res = $db->query(
         ) x ON x.host_id = h.host_id AND x.service_id IS NULL" : ""
     ) . ";"
 );
-$res = $db->query($queryPEND);
 while ($row = $res->fetch()) {
     $dataPEND[] = $row;
 }
