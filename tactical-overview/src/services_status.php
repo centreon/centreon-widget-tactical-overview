@@ -1,11 +1,11 @@
 <?php
-/**
- * Copyright 2005-2015 Centreon
- * Centreon is developped by : Julien Mathis AND Romain Le Merlus under
+/*
+ * Copyright 2005-2020 Centreon
+ * Centreon is developed by : Julien Mathis and Romain Le Merlus under
  * GPL Licence 2.0.
  *
  * This program is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License AS published by the Free Software
+ * the terms of the GNU General Public License as published by the Free Software
  * Foundation ; either version 2 of the License.
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY
@@ -16,14 +16,14 @@
  * this program; if not, see <http://www.gnu.org/licenses>.
  *
  * Linking this program statically or dynamically with other modules is making a
- * combined work based on this program. Thus, the terms AND conditions of the GNU
+ * combined work based on this program. Thus, the terms and conditions of the GNU
  * General Public License cover the whole combination.
  *
- * As a special exception, the copyright holders of this program give Centreon
+ * As a special exception, the copyright holders of this program give CENTREON
  * permission to link this program with independent modules to produce an executable,
- * regardless of the license terms of these independent modules, AND to copy and
- * distribute the resulting executable under terms of Centreon choice, provided that
- * Centreon also meet, for each linked independent module, the terms  AND conditions
+ * regardless of the license terms of these independent modules, and to copy and
+ * distribute the resulting executable under terms of CENTREON choice, provided that
+ * CENTREON also meet, for each linked independent module, the terms  and conditions
  * of the license of that module. An independent module is a module which is not
  * derived from this program. If you modify this program, you may extend this
  * exception to your version of the program, but you are not obliged to do so. If you
@@ -109,7 +109,10 @@ while ($row = $res->fetchRow()) {
   $dataUNK[] = $row;
 }
 
-$autoRefresh = $preferences['autoRefresh'];
+$autoRefresh = 30;
+if (isset($preferences['refresh_interval'])) {
+    $autoRefresh = (int)$preferences['refresh_interval'];
+}
 
 $template->assign('widgetId', $widgetId);
 $template->assign('autoRefresh', $autoRefresh);
