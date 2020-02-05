@@ -83,7 +83,7 @@ $template = new Smarty();
 $template = initSmartyTplForPopup($path, $template, "./", $centreon_path);
 
 if (isset($preferences['object_type'])
-    && ($preferences['object_type'] === "hosts" || $preferences['object_type'] === "hosts")
+    && ($preferences['object_type'] === "hosts" || $preferences['object_type'] === "")
 ) {
     require_once 'src/hosts_status.php';
 }else if (isset($preferences['object_type']) && $preferences['object_type'] === "services") {
