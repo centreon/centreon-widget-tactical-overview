@@ -109,10 +109,9 @@ while ($row = $res->fetchRow()) {
   $dataUNK[] = $row;
 }
 
-$autoRefresh = 30;
-if (isset($preferences['refresh_interval'])) {
-    $autoRefresh = (int)$preferences['refresh_interval'];
-}
+$autoRefresh = (isset($preferences['refresh_interval']) && (int)$preferences['refresh_interval'] > 0)
+    ? (int)$preferences['refresh_interval']
+    : 30;
 
 $template->assign('widgetId', $widgetId);
 $template->assign('autoRefresh', $autoRefresh);
